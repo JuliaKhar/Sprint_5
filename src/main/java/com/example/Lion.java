@@ -34,16 +34,5 @@ public class Lion {
 
 }
 
- /*  Предыдущий код
-    Feline feline = new Feline();
 
-    public int getKittens() {
-        return feline.getKittens();
-    }
-
-    public List<String> getFood() throws Exception {
-        return feline.getFood("Хищник");
-    }
-
-  */
 
