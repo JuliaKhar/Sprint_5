@@ -7,8 +7,9 @@ public class Lion {
     boolean hasMane;
     Predator predator;
 
-    public Lion(String sex, Predator predator) throws Exception {
-        this.predator = predator;
+       Lion(String sex, Feline feline) throws Exception {
+            this.predator = feline;
+
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {

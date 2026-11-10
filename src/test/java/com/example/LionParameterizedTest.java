@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class LionParameterizedTest {
 
     @Mock
-    Predator predator;
+    Feline feline;
 
 //Корректные значения
     @ParameterizedTest
@@ -24,7 +24,7 @@ public class LionParameterizedTest {
             "Самка, false"
     })
     void hasManeDependsOnSex(String sex, boolean expectedMane) throws Exception {
-        Lion lion = new Lion(sex, predator);
+        Lion lion = new Lion(sex, feline);
         assertEquals(expectedMane, lion.doesHaveMane());
     }
 
@@ -32,6 +32,6 @@ public class LionParameterizedTest {
     @ParameterizedTest
     @ValueSource(strings = {"", "оно", "самец", "1"})
     void invalidSexThrowsException(String sex) {
-        assertThrows(Exception.class, () -> new Lion(sex, predator));
+        assertThrows(Exception.class, () -> new Lion(sex, feline));
     }
 }

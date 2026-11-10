@@ -15,22 +15,22 @@ import static org.mockito.Mockito.when;
 public class LionTest {
 
     @Mock
-    Predator predator;
+    Feline feline;
 
     @Test
     void getKittensReturnsOne() throws Exception{
-        Lion lion = new Lion("Самка", predator);
+        Lion lion = new Lion("Самка", feline);
         assertEquals(1, lion.getKittens());
     }
 
 
     @Test
     void getFoodReturnsPredatorFood() throws Exception {
-        Lion lion = new Lion("Самец", predator);
+        Lion lion = new Lion("Самец", feline);
         List<String> predatorFood = List.of("Животные", "Птицы", "Рыба");
-        when(predator.eatMeat()).thenReturn(predatorFood);
+        when(feline.eatMeat()).thenReturn(predatorFood);
         assertEquals(predatorFood, lion.getFood());
-        verify(predator).eatMeat();
+        verify(feline).eatMeat();
     }
 
 }
